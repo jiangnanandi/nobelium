@@ -31,16 +31,7 @@ export default function Blog ({ postsToShow, page, showNext }) {
         <BlogPost key={post.id} post={post} />
       ))}
       {showNext && <Pagination page={page} showNext={showNext} />}
+      <Newsletter />
     </Container>
   )
-}
-
-export default function Home() {
-  return (
-    <div>
-      <h1>Welcome to my blog!</h1>
-      <p>...</p>
-      <Newsletter />
-    </div>
-    );
 }
