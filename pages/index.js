@@ -5,6 +5,7 @@ import BlogPost from '@/components/BlogPost'
 import Pagination from '@/components/Pagination'
 import { getAllPosts } from '@/lib/notion'
 import { useConfig } from '@/lib/config'
+import { Newsletter} from '@/components/Newsletter'
 
 export async function getStaticProps () {
   const posts = await getAllPosts({ includePages: false })
@@ -30,6 +31,7 @@ export default function Blog ({ postsToShow, page, showNext }) {
         <BlogPost key={post.id} post={post} />
       ))}
       {showNext && <Pagination page={page} showNext={showNext} />}
+      <Newsletter />
     </Container>
   )
 }
